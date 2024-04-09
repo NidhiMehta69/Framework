@@ -23,7 +23,6 @@ public class Helper {
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String screenshotPath = System.getProperty("user.dir") + "/ScreenShots/Image_"+ getCurrentDateTime() + ".png";
 		try {
-			//FileHandler.copy(src, new File("./Screenshots/FailureImage_"+ getCurrentDateTime() +".png"));
 			FileHandler.copy(src, new File(screenshotPath));
 			System.out.println("Screenshot Captured");
 		} catch (IOException e) {
@@ -40,17 +39,5 @@ public class Helper {
 		
 	}
 	
-	/*public ExtentReports getReportObject() {
-		//String reportPath =  System.getProperty("user.dir")+"//Reports//" + timestamp + "//"  + "index.html";
-		String reportPath =  System.getProperty("user.dir")+"//reports//" + timestamp + "//"  + "index.html";
-		ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
-		//ExtentSparkReporter reporter = new ExtentSparkReporter("Reports/index.html");
-		reporter.config().setReportName("Assignment");
-		reporter.config().setDocumentTitle("Assignment Test Report");		
-		ExtentReports extent = new ExtentReports();
-		extent.attachReporter(reporter);
-		
-		return extent;
-	}*/
 	
 }
